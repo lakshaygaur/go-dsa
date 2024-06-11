@@ -1,4 +1,4 @@
-package main
+package lcreversestring
 
 import "fmt"
 
@@ -7,6 +7,9 @@ func isAlphabet(ch byte) bool {
 		return true
 	}
 	if ch >= 97 && ch <= 122 {
+		return true
+	}
+	if ch >= 48 && ch <= 57 {
 		return true
 	}
 	return false
@@ -20,16 +23,35 @@ func reverseStr(s string) string {
 	return string(result)
 }
 
+func removeTrailingSpace(s string) string {
+	// var result []byte
+	lastAlphabetIndex := 0
+	for i := 0; i < len(s); i++ {
+		if isAlphabet(s[i]) {
+			lastAlphabetIndex = i
+		}
+	}
+	if lastAlphabetIndex != (len(s) - 1) {
+		return s[:lastAlphabetIndex+1]
+	}
+	return s
+}
+
+/*
+*
+f--> first pointer
+s--> second pointer
+"  hello world  "
+
+	^^
+	fs
+*/
 func reverseWords(s string) string {
 	var output string
-	// for i := 0; i < len(s); i++ {
-	// 	output = append(output, s[i])
-	// }
 
 	tempStr := ""
 	first, second := len(s)-2, len(s)-1
 	for second >= 0 {
-		fmt.Println("s[i]", string(s[second]), isAlphabet(s[second]))
 		if isAlphabet(s[second]) {
 			tempStr += string(s[second])
 			if first == -1 || !isAlphabet(s[first]) {
@@ -45,13 +67,13 @@ func reverseWords(s string) string {
 		first--
 		second--
 	}
-	return output
+	return removeTrailingSpace(output)
 }
 
 func main() {
 	// s := "the sky is blue"
-	s := "  hello world  "
-	// fmt.Println(" ascii ", 'z')
+	// s := "  hello world  "
+	s := "EPY2giL"
 
 	fmt.Println("received ===> \n", reverseWords(s))
 }
