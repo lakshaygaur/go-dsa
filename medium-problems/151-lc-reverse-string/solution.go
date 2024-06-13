@@ -1,7 +1,5 @@
 package lcreversestring
 
-import "fmt"
-
 func isAlphabet(ch byte) bool {
 	if ch >= 65 && ch <= 90 {
 		return true
@@ -68,12 +66,4 @@ func reverseWords(s string) string {
 		second--
 	}
 	return removeTrailingSpace(output)
-}
-
-func main() {
-	// s := "the sky is blue"
-	// s := "  hello world  "
-	s := "EPY2giL"
-
-	fmt.Println("received ===> \n", reverseWords(s))
 }
