@@ -1,44 +1,24 @@
-// package lcinreasingtripletsequence
-package main
+package lcinreasingtripletsequence
 
-import "fmt"
+import (
+	"math"
+)
 
 func increasingTriplet(nums []int) bool {
 
-	i := 0
-	j := i + 1
-	k := j + 1
+	first := int(math.Pow(2, 32))  //2 ^ 32
+	second := int(math.Pow(2, 32)) //2 ^ 32
 
-	for i < len(nums)-2 {
-		fmt.Println("i=", i, " j=", j, " k=", k)
-		if nums[i] < nums[j] && nums[j] < nums[k] {
+	for i := 0; i < len(nums); i++ {
+		if nums[i] <= first {
+			first = nums[i]
+		} else if nums[i] <= second { // && second > first
+			second = nums[i]
+		} else {
 			return true
 		}
-		if nums[i] > nums[j] {
-			// increment i and j
-			i++
-			if i == j {
-				j++
-			}
-			if j == k {
-				k++
-			}
-			continue
-		}
-		if nums[j] > nums[k] {
-			j++
-			k++
-			continue
-		}
+
 	}
+
 	return false
-}
-
-func main() {
-	// input := []int{1, 2, 3, 4, 5}
-	// input := []int{5, 4, 3, 2, 1}
-	// input := []int{2, 1, 5, 0, 4, 6}
-	input := []int{20, 100, 10, 12, 5, 13}
-
-	fmt.Println("Output ===> ", increasingTriplet(input))
 }

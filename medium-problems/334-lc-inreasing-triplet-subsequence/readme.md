@@ -4,6 +4,11 @@ Given an integer array nums, return true if there exists a triple of indices `(i
 
 [Solve on Leetcode](https://leetcode.com/problems/increasing-triplet-subsequence) 
 
+Run Tests:
+```
+go test -timeout 30s -run ^TestIncreasingTriplet$ dsa/medium-problems/334-lc-inreasing-triplet-subsequence
+```
+
 Example 1:
 ```
 Input: nums = [1,2,3,4,5]
