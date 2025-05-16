@@ -1,4 +1,4 @@
-package main
+package aws
 
 import "fmt"
 
@@ -14,7 +14,7 @@ func getMinMoves(input []int) int {
 	return 0
 }
 
-func main() {
+func runMinMoves() {
 	input := [...]int{3, 2, 1}
 	fmt.Println("input=", input)
 }

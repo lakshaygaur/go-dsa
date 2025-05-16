@@ -1,4 +1,4 @@
-package main
+package merge2strings
 
 import "fmt"
 
@@ -19,7 +19,7 @@ func mergeAlternately(word1 string, word2 string) string {
 	return str
 }
 
-func main() {
+func runMergeAlternatively() {
 	result := mergeAlternately("abc", "pqr")
 	// result := mergeAlternately("ab", "pqrs")
 	fmt.Println("result=", result)

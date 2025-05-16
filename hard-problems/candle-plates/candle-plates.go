@@ -1,4 +1,4 @@
-package main
+package candleplates
 
 import "fmt"
 
@@ -34,7 +34,7 @@ func countPlates(s string, query []int) int {
 	return count
 }
 
-func main() {
+func runCountPlates() {
 	// s := "*|***||*"
 	s := "**|**|***|"
 	var query []int

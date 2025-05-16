@@ -1,4 +1,4 @@
-package main
+package mergesort
 
 import "fmt"
 
@@ -39,7 +39,7 @@ func merge(nums1 []int, m int, nums2 []int, n int) {
 	// }
 }
 
-func main() {
+func runMerge() {
 
 	//case 1
 	// nums1 := []int{1, 2, 3, 0, 0, 0}

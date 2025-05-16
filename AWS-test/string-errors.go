@@ -1,4 +1,4 @@
-package main
+package aws
 
 import "fmt"
 
@@ -17,10 +17,10 @@ return output
 */
 
 func getMinErrors(input string) int {
-
+	return 0
 }
 
-func main() {
+func runThis() {
 	input := "101!1"
 
 	fmt.Println("input=", input)
