@@ -38,33 +38,20 @@ To make the most out of this repository, follow these steps:
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/your-username/leetcode-dsa-solutions.git
-   cd leetcode-dsa-solutions
+   git clone https://github.com/lakshaygaur/go-dsa.git
+   cd go-dsa
    ```
 
 2. **Navigate to the desired category and problem:**
+  - For example: 
    ```sh
-   cd leetcode/easy
-   # or
-   cd dsa/trees
+   cd easy-problems/<problem-dir>
    ```
 
-3. **Open the solution file in your preferred programming language.** Each solution includes comments and explanations to help you understand the approach.
+3. **Run the solution:**
 
-4. **Run the solution:**
-   - For Python:
      ```sh
-     python3 solution.py
-     ```
-   - For Java:
-     ```sh
-     javac Solution.java
-     java Solution
-     ```
-   - For C++:
-     ```sh
-     g++ solution.cpp -o solution
-     ./solution
+     go test .
      ```
 
 ## Contributing
@@ -94,12 +81,11 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 If you have any questions, suggestions, or feedback, feel free to reach out:
 
-- **GitHub Issues**: [Create a new issue](https://github.com/your-username/leetcode-dsa-solutions/issues)
-- **Email**: your-email@example.com
+- **GitHub Issues**: [Create a new issue](https://github.com/lakshaygaur/leetcode-dsa-solutions/issues)
+- **Email**: lakshaygaur09@gmail.com
 
 ---
 
 Happy coding and best of luck with your interview preparation and problem-solving journey!
 
 ---
-**Note:** Replace `your-username` with your actual GitHub username and `your-email@example.com` with your email address.
