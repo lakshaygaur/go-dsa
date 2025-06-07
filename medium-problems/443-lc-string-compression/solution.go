@@ -1,40 +1,32 @@
-// package lcstringcompression
-package main
+package lcstringcompression
 
-import (
-	"fmt"
-	"strconv"
-)
+import "fmt"
 
 func compress(chars []byte) int {
-	// newLength := 0
-	var tempInput string //[]byte
-	charMap := make(map[string]int)
-	// newCharToAdd := chars[0]
-	// flag := true
+	count := 0
+	lastIndex := 0
 	for i := 0; i < len(chars); i++ {
-		// if flag {
-		// 	tempInput = append(tempInput, newCharToAdd) // add newCharacter only if the flag allows
-		// 	flag = false
-		// }
-		// start counting length of the character
-		charMap[string(chars[i])]++
-	}
-	for key, value := range charMap {
-		tempInput += key
-		fmt.Println("value", value)
-		tempInput += strconv.Itoa(value)
-	}
-	chars = []byte(tempInput) // should point to new tempInput variable
-	fmt.Println("tempInput", tempInput, len(tempInput))
-	fmt.Println("chars new ", string(chars))
-	// chars[0] = 'b' // should point to new tempInput variable
-	return len(tempInput)
-}
+		ch := chars[i]
+		count = 0
 
-func main() {
-	input := []byte{'a', 'a', 'b', 'b', 'c', 'c', 'c'}
-
-	fmt.Println("Output ===> ", compress(input))
-	fmt.Println("Updated input ===> ", string(input))
+		for i < len(chars) && ch == chars[i] {
+			count++
+			i++
+		}
+		if count == 1 {
+			chars[lastIndex] = ch
+			lastIndex++
+		} else {
+			chars[lastIndex] = ch
+			lastIndex++
+			// convert count to string and add to chars
+			countStr := fmt.Sprintf("%d", count)
+			for _, v := range countStr {
+				chars[lastIndex] = byte(v)
+				lastIndex++
+			}
+		}
+		i--
+	}
+	return lastIndex
 }
